@@ -27,7 +27,7 @@ def casteljau(pontos, t):
     return pontos_temp[0]
 
 #Gera pontos da curva de Bézier usando o algoritmo de De Casteljau.
-def curva_bezier_casteljau(pontos_controle, num_pontos=4):
+def curva_bezier_casteljau(pontos_controle, num_pontos=50):
     t_values = np.linspace(0, 1, num_pontos)
     return np.array([casteljau(pontos_controle, t) for t in t_values])
 
@@ -73,7 +73,7 @@ escala = 100
 canvas = Canvas(root, width=500, height=500, bg='white')
 canvas.pack()
 
-pontos_controle = [(1, 1), (2, 2), (3, 2), (4, 1)]
+pontos_controle = []
 metodo_atual = curva_bezier_casteljau
 
 frame_botoes = tk.Frame(root)
